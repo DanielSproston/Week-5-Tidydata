@@ -68,3 +68,9 @@ hdi_summary_low %>%
 
 #Task 2
 
+file <- "http://www.ndbc.noaa.gov/view_text_file.php?filename=44025h2011.txt.gz&dir=data/historical/stdmet/"
+readLines(file, n = 4)
+
+buoy44025 <- read_table(file, 
+                        col_names = FALSE,
+                        skip = 2)
