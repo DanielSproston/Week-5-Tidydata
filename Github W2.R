@@ -75,3 +75,9 @@ buoy44025 <- read_table(file,
                         col_names = FALSE,
                         skip = 2)
 #git check
+task2 <- scan(file, skip = 1, nlines = 1, what = character()) %>%
+  str_remove("#") %>%
+  str_replace("/", "_per_")
+
+names(buoy44025) <- paste(task2, units, sep = "_")
+
